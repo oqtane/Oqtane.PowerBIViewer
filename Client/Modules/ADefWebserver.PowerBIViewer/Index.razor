@@ -1,0 +1,77 @@
+@using Oqtane.PowerBIViewer.Services
+@using Oqtane.PowerBIViewer.Models
+
+@namespace Oqtane.PowerBIViewer
+@inherits ModuleBase
+@inject IPowerBIViewerService PowerBIViewerService
+@inject NavigationManager NavigationManager
+@inject IStringLocalizer<Index> Localizer
+
+@if (_PowerBIViewers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add PowerBIViewer" ResourceKey="Add" />
+    <br />
+    <br />
+    @if (@_PowerBIViewers.Count != 0)
+    {
+        <Pager Items="@_PowerBIViewers">
+            <Header>
+                <th style="width: 1px;">&nbsp;</th>
+                <th style="width: 1px;">&nbsp;</th>
+                <th>@Localizer["Name"]</th>
+            </Header>
+            <Row>
+                <td><ActionLink Action="Edit" Parameters="@($"id=" + context.PowerBIViewerId.ToString())" ResourceKey="Edit"  /></td>
+                <td><ActionDialog Header="Delete PowerBIViewer" Message="Are You Sure You Wish To Delete This PowerBIViewer?" Action="Delete" Security="SecurityAccessLevel.Edit" Class="btn btn-danger" OnClick="@(async () => await Delete(context))" ResourceKey="Delete"  /></td>
+                <td>@context.Name</td>
+            </Row>
+        </Pager>
+    }
+    else
+    {
+        <p>@Localizer["Message.DisplayNone"]</p>
+    }
+}
+
+@code {
+    public override List<Resource> Resources => new List<Resource>()
+    {
+        new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+        new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    };
+
+    List<PowerBIViewer> _PowerBIViewers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _PowerBIViewers = await PowerBIViewerService.GetPowerBIViewersAsync(ModuleState.ModuleId);
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Loading PowerBIViewer {Error}", ex.Message);
+            AddModuleMessage(Localizer["Message.LoadError"], MessageType.Error);
+        }
+    }
+
+    private async Task Delete(PowerBIViewer PowerBIViewer)
+    {
+        try
+        {
+            await PowerBIViewerService.DeletePowerBIViewerAsync(PowerBIViewer.PowerBIViewerId, ModuleState.ModuleId);
+            await logger.LogInformation("PowerBIViewer Deleted {PowerBIViewer}", PowerBIViewer);
+            _PowerBIViewers = await PowerBIViewerService.GetPowerBIViewersAsync(ModuleState.ModuleId);
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Deleting PowerBIViewer {PowerBIViewer} {Error}", PowerBIViewer, ex.Message);
+            AddModuleMessage(Localizer["Message.DeleteError"], MessageType.Error);
+        }
+    }
+}
