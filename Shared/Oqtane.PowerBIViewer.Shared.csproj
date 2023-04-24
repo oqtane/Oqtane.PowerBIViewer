@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+	<PackageReference Include="Microsoft.PowerBI.Api" Version="4.13.0" />
   </ItemGroup>
 
   <ItemGroup>

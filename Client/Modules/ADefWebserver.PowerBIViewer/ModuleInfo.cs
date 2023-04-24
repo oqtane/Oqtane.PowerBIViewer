@@ -12,7 +12,7 @@ namespace Oqtane.PowerBIViewer
             Version = "1.0.0",
             ServerManagerType = "Oqtane.PowerBIViewer.Manager.PowerBIViewerManager, Oqtane.PowerBIViewer.Server.Oqtane",
             ReleaseVersions = "1.0.0",
-            Dependencies = "Oqtane.PowerBIViewer.Shared.Oqtane",
+            Dependencies = "Oqtane.PowerBIViewer.Shared.Oqtane,Microsoft.Graph,Microsoft.Identity.Client,Microsoft.Identity.Web,Microsoft.PowerBI.Api,Newtonsoft.Json",
             PackageName = "Oqtane.PowerBIViewer" 
         };
     }

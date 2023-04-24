@@ -25,7 +25,14 @@
     <file src="..\Server\bin\Release\net6.0\Oqtane.PowerBIViewer.Server.Oqtane.dll" target="lib\net6.0" /> 
     <file src="..\Server\bin\Release\net6.0\Oqtane.PowerBIViewer.Server.Oqtane.pdb" target="lib\net6.0" /> 
     <file src="..\Shared\bin\Release\net6.0\Oqtane.PowerBIViewer.Shared.Oqtane.dll" target="lib\net6.0" /> 
-    <file src="..\Shared\bin\Release\net6.0\Oqtane.PowerBIViewer.Shared.Oqtane.pdb" target="lib\net6.0" /> 
+    <file src="..\Shared\bin\Release\net6.0\Oqtane.PowerBIViewer.Shared.Oqtane.pdb" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Microsoft.Graph.Core" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Microsoft.Graph.dll" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Microsoft.Identity.Client.dll" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Microsoft.PowerBI.Api.dll" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Newtonsoft.Json.Bson.dll" target="lib\net6.0" />
+	<file src="..\Server\bin\Release\net6.0\Newtonsoft.Json.dll" target="lib\net6.0" />
     <file src="..\Server\wwwroot\**\*.*" target="wwwroot" /> 
     <file src="icon.png" target="" />
   </files>

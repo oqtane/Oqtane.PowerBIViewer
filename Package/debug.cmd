@@ -5,3 +5,10 @@ XCOPY "..\Server\bin\Debug\net6.0\Oqtane.PowerBIViewer.Server.Oqtane.pdb" "..\..
 XCOPY "..\Shared\bin\Debug\net6.0\Oqtane.PowerBIViewer.Shared.Oqtane.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
 XCOPY "..\Shared\bin\Debug\net6.0\Oqtane.PowerBIViewer.Shared.Oqtane.pdb" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
 XCOPY "..\Server\wwwroot\*" "..\..\oqtane.framework\Oqtane.Server\wwwroot\" /Y /S /I
+XCOPY "..\Server\bin\Debug\net6.0\Microsoft.Graph.Core" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Microsoft.Graph.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Microsoft.Identity.Client.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Microsoft.PowerBI.Api.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Newtonsoft.Json.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y

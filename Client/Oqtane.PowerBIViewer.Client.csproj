@@ -19,6 +19,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.3" />
     <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Graph" Version="5.0.0" />
+	<PackageReference Include="Microsoft.Identity.Client" Version="4.50.0" />
+	<PackageReference Include="Microsoft.Identity.Web" Version="2.5.0" />
+	<PackageReference Include="Microsoft.PowerBI.Api" Version="4.13.0" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
