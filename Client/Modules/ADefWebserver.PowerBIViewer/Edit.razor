@@ -52,19 +52,7 @@
     {
         try
         {
-            if (PageState.Action == "Edit")
-            {
-                _id = Int32.Parse(PageState.QueryString["id"]);
-                PowerBIViewer PowerBIViewer = await PowerBIViewerService.GetPowerBIViewerAsync(_id, ModuleState.ModuleId);
-                if (PowerBIViewer != null)
-                {
-                    _name = PowerBIViewer.Name;
-                    _createdby = PowerBIViewer.CreatedBy;
-                    _createdon = PowerBIViewer.CreatedOn;
-                    _modifiedby = PowerBIViewer.ModifiedBy;
-                    _modifiedon = PowerBIViewer.ModifiedOn;
-                }
-            }
+            
         }
         catch (Exception ex)
         {
@@ -75,38 +63,6 @@
 
     private async Task Save()
     {
-        try
-        {
-            validated = true;
-            var interop = new Oqtane.UI.Interop(JSRuntime);
-            if (await interop.FormValid(form))
-            {
-                if (PageState.Action == "Add")
-                {
-                    PowerBIViewer PowerBIViewer = new PowerBIViewer();
-                    PowerBIViewer.ModuleId = ModuleState.ModuleId;
-                    PowerBIViewer.Name = _name;
-                    PowerBIViewer = await PowerBIViewerService.AddPowerBIViewerAsync(PowerBIViewer);
-                    await logger.LogInformation("PowerBIViewer Added {PowerBIViewer}", PowerBIViewer);
-                }
-                else
-                {
-                    PowerBIViewer PowerBIViewer = await PowerBIViewerService.GetPowerBIViewerAsync(_id, ModuleState.ModuleId);
-                    PowerBIViewer.Name = _name;
-                    await PowerBIViewerService.UpdatePowerBIViewerAsync(PowerBIViewer);
-                    await logger.LogInformation("PowerBIViewer Updated {PowerBIViewer}", PowerBIViewer);
-                }
-                NavigationManager.NavigateTo(NavigateUrl());
-            }
-            else
-            {
-                AddModuleMessage(Localizer["Message.SaveValidation"], MessageType.Warning);
-            }
-        }
-        catch (Exception ex)
-        {
-            await logger.LogError(ex, "Error Saving PowerBIViewer {Error}", ex.Message);
-            AddModuleMessage(Localizer["Message.SaveError"], MessageType.Error);
-        }
+
     }
 }

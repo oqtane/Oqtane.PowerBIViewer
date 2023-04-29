@@ -15,14 +15,13 @@
         max-width: 2000px;
     }
 </style>
-@if (_PowerBIViewers == null)
+@if (_PowerBIViewer == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add PowerBIViewer" ResourceKey="Add" />
-    <br />
+    <p>_PowerBIViewer.AuthToken = @_PowerBIViewer.AuthToken </p>
     <br />
     <div @ref="@PowerBIElement" style="width:100%;height:740px;max-width: 2000px" />
 }
@@ -36,13 +35,14 @@ else
         new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "powerbi.js" }
     };
 
-    List<PowerBIViewer> _PowerBIViewers;
+    PowerBIViewer _PowerBIViewer;
+    private int _id;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            _PowerBIViewers = await PowerBIViewerService.GetPowerBIViewersAsync(ModuleState.ModuleId);
+
         }
         catch (Exception ex)
         {
@@ -58,36 +58,14 @@ else
 
     protected async Task LoadReport()
     {
-        //try
-        //{
-        //    var result = new PowerBIEmbedConfig();
-        //    var accessToken = await @PowerBIService.GetPowerBIAccessTokenAsync();
-        //    var tokenCredentials = new TokenCredentials(accessToken, "Bearer");
-
-        //    using (var client = new PowerBIClient(new Uri(_powerBISettings.ApiUrl), tokenCredentials))
-        //    {
-        //        var report = await client.Reports.GetReportInGroupAsync(new Guid(PowerBIWorkspaceID), new Guid(PowerBIReportID));
-        //        var generateTokenRequestParameters = new GenerateTokenRequest(accessLevel: "view");
-        //        var tokenResponse = await client.Reports.GenerateTokenAsync(new Guid(PowerBIWorkspaceID), new Guid(PowerBIReportID), generateTokenRequestParameters);
-
-        //        result.EmbedToken = tokenResponse;
-
-        //        result.EmbedUrl = report.EmbedUrl;
-        //        result.Id = report.Id.ToString();
-
-        //        // Now Load the Power BI Report
-        //        await Interop.CreateReport(
-        //            PowerBIElement,
-        //            false,
-        //            tokenResponse.Token,
-        //            report.EmbedUrl,
-        //            report.Id.ToString());
-        //    }
-        //}
-        //catch (Exception ex)
-        //{
-        //    ErrorMessage = ex.GetBaseException().Message;
-        //    StateHasChanged();
-        //}
+        try
+        {
+            _PowerBIViewer = await PowerBIViewerService.GetPowerBIViewerAsync(ModuleState.ModuleId);
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Loading PowerBIViewer {PowerBIViewerId} {Error}", _id, ex.Message);
+            AddModuleMessage(Localizer["Message.LoadError"], MessageType.Error);
+        }
     }
 }
