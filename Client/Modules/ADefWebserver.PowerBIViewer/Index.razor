@@ -22,6 +22,8 @@
 else
 {
     <p>_PowerBIViewer.AuthToken = @_PowerBIViewer.AuthToken </p>
+    <p>_PowerBIViewer.EmbedUrl = @_PowerBIViewer.EmbedUrl </p>
+    <p>_PowerBIViewer.EmbedToken = @_PowerBIViewer.EmbedToken.Token.ToString() </p>
     <br />
     <div @ref="@PowerBIElement" style="width:100%;height:740px;max-width: 2000px" />
 }
@@ -42,7 +44,7 @@ else
     {
         try
         {
-
+            _PowerBIViewer = await PowerBIViewerService.GetPowerBIViewerAsync(ModuleState.ModuleId);
         }
         catch (Exception ex)
         {
@@ -60,7 +62,7 @@ else
     {
         try
         {
-            _PowerBIViewer = await PowerBIViewerService.GetPowerBIViewerAsync(ModuleState.ModuleId);
+
         }
         catch (Exception ex)
         {

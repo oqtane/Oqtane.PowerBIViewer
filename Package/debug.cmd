@@ -12,3 +12,4 @@ XCOPY "..\Server\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll"
 XCOPY "..\Server\bin\Debug\net6.0\Microsoft.PowerBI.Api.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
 XCOPY "..\Server\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
 XCOPY "..\Server\bin\Debug\net6.0\Newtonsoft.Json.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
+XCOPY "..\Server\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net6.0\" /Y
