@@ -84,6 +84,7 @@ namespace Oqtane.PowerBIViewer.Controllers
 
                             PowerBIViewer.EmbedToken = tokenResponse.Result;
                             PowerBIViewer.EmbedUrl = report.Result.EmbedUrl;
+                            PowerBIViewer.ReportId = report.Result.Id.ToString();
                         }
                     }
                 }

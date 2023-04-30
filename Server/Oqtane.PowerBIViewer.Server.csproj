@@ -19,6 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\_content\Module.js" />
+    <Content Include="wwwroot\_content\powerbi.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.3" />

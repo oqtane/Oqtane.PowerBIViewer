@@ -13,7 +13,7 @@ namespace Oqtane.PowerBIViewer.Models
         public int PowerBIViewerId { get; set; }
         public int ModuleId { get; set; }
         public string Name { get; set; }
-        public string ReportName { get; set; }
+        public string ReportId { get; set; }
         public string AuthToken { get; set; }
         public string EmbedUrl { get; set; }
         public EmbedToken EmbedToken { get; set; }

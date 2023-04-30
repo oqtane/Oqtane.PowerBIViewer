@@ -29,14 +29,15 @@ else
     public override List<Resource> Resources => new List<Resource>()
     {
         new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
-        new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" },
-        new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "powerbi.js" }
+        new Resource { ResourceType = ResourceType.Script, Url = "_content/Module.js" },
+        new Resource { ResourceType = ResourceType.Script, Url = "_content/powerbi.js" }
     };
 
     PowerBIViewer _PowerBIViewer;
     private string AuthToken;
     private string EmbedUrl;
     private string EmbedToken;
+    private string ReportId;
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,6 +50,7 @@ else
                 AuthToken = @_PowerBIViewer.AuthToken;
                 EmbedUrl = @_PowerBIViewer.EmbedUrl;
                 EmbedToken = @_PowerBIViewer.EmbedToken.Token.ToString();
+                ReportId = @_PowerBIViewer.ReportId;
             }
         }
         catch (Exception ex)
@@ -60,14 +62,21 @@ else
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        await LoadReport();
-    }
-
-    protected async Task LoadReport()
-    {
         try
         {
+            if (_PowerBIViewer != null)
+            {
+                if (_PowerBIViewer.AuthToken != "")
+                {
+                    var interop = new Oqtane.PowerBIViewer.Interop(JSRuntime);
 
+                    await interop.CreateReport(
+                            PowerBIElement,
+                            EmbedToken,
+                            EmbedUrl,
+                            ReportId);
+                }
+            }
         }
         catch (Exception ex)
         {

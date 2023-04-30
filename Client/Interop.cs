@@ -15,14 +15,13 @@ namespace Oqtane.PowerBIViewer
 
         internal ValueTask<object> CreateReport(
            ElementReference reportContainer,
-           bool isEdit,
            string accessToken,
            string embedUrl,
            string embedReportId)
         {
                 return _jsRuntime.InvokeAsync<object>(
-                "PowerBIViewer.showReport",
-                reportContainer, isEdit, accessToken, embedUrl,
+                "Oqtane.PowerBIViewer.showReport",
+                reportContainer, false, accessToken, embedUrl,
                 embedReportId);
         }
 
