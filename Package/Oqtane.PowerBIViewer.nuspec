@@ -33,7 +33,8 @@
 	<file src="..\Server\bin\Release\net6.0\Microsoft.PowerBI.Api.dll" target="lib\net6.0" />
 	<file src="..\Server\bin\Release\net6.0\Newtonsoft.Json.Bson.dll" target="lib\net6.0" />
 	<file src="..\Server\bin\Release\net6.0\Newtonsoft.Json.dll" target="lib\net6.0" />
-    <file src="..\Server\wwwroot\**\*.*" target="wwwroot" /> 
+	<file src="..\Server\bin\Release\net6.0\Microsoft.Rest.ClientRuntime.dll" target="lib\net6.0" />
+	<file src="..\Server\wwwroot\**\*.*" target="wwwroot" /> 
     <file src="icon.png" target="" />
   </files>
 </package>
