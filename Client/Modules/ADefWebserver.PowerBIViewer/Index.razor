@@ -45,12 +45,15 @@ else
         {
             _PowerBIViewer = await PowerBIViewerService.GetPowerBIViewerAsync(ModuleState.ModuleId);
 
-            if (_PowerBIViewer.AuthToken != "")
+            if (_PowerBIViewer != null)
             {
-                AuthToken = @_PowerBIViewer.AuthToken;
-                EmbedUrl = @_PowerBIViewer.EmbedUrl;
-                EmbedToken = @_PowerBIViewer.EmbedToken.Token.ToString();
-                ReportId = @_PowerBIViewer.ReportId;
+                if (_PowerBIViewer.AuthToken != "")
+                {
+                    AuthToken = @_PowerBIViewer.AuthToken;
+                    EmbedUrl = @_PowerBIViewer.EmbedUrl;
+                    EmbedToken = @_PowerBIViewer.EmbedToken.Token.ToString();
+                    ReportId = @_PowerBIViewer.ReportId;
+                }
             }
         }
         catch (Exception ex)
