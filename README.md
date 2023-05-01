@@ -1,8 +1,13 @@
 # Oqtane.PowerBIViewer
 
+![image](https://user-images.githubusercontent.com/1857799/235460849-69919df2-04cf-4b57-833e-06b233bbd18b.png)
+
 ## Set-up
 
 
+![image](https://user-images.githubusercontent.com/1857799/235461514-3dc07498-6927-435a-abf8-e1a0d7e192f3.png)
+
+![image](https://user-images.githubusercontent.com/1857799/235461452-d39ba744-1ef3-4510-884d-5f4f9cd1bf3a.png)
 
 
 
