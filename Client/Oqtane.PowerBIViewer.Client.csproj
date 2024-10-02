@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <Version>1.0.0</Version>
     <Authors>Oqtane</Authors>
@@ -13,18 +13,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.12" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.12" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.12" />
-    <PackageReference Include="Oqtane.Client" Version="4.0.5" />
-    <PackageReference Include="Oqtane.Shared" Version="4.0.5" />
-    <PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
-	<PackageReference Include="Microsoft.Graph" Version="5.30.0" />
-	<PackageReference Include="Microsoft.Identity.Client" Version="4.56.0" />
-	<PackageReference Include="Microsoft.Identity.Web" Version="2.15.1" />
-	<PackageReference Include="Microsoft.PowerBI.Api" Version="4.17.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.8" />
+    <PackageReference Include="Oqtane.Client" Version="5.2.3" />
+    <PackageReference Include="Oqtane.Shared" Version="5.2.3" />
+    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+	<PackageReference Include="Microsoft.Graph" Version="5.59.0" />
+	<PackageReference Include="Microsoft.Identity.Client" Version="4.65.0" />
+	<PackageReference Include="Microsoft.Identity.Web" Version="3.2.0" />
+	<PackageReference Include="Microsoft.PowerBI.Api" Version="4.20.0" />
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

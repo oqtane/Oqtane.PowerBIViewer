@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <id>Oqtane.PowerBIViewer</id>
-    <version>1.0.0</version>
-    <authors>Oqtane</authors>
-    <owners>Oqtane</owners>
-    <title>PowerBIViewer</title>
-    <description>PowerBIViewer</description>
-    <copyright>Oqtane</copyright>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <license type="expression">MIT</license>
-    <projectUrl>https://github.com/oqtane/oqtane.framework</projectUrl>
-    <icon>icon.png</icon>
-    <tags>oqtane module</tags>
-    <releaseNotes></releaseNotes>
-    <summary></summary>
-    <dependencies>
-      <dependency id="Oqtane.Framework" version="3.4.2" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="..\Client\bin\Release\net7.0\Oqtane.PowerBIViewer.Client.Oqtane.dll" target="lib\net7.0" /> 
-    <file src="..\Client\bin\Release\net7.0\Oqtane.PowerBIViewer.Client.Oqtane.pdb" target="lib\net7.0" /> 
-    <file src="..\Server\bin\Release\net7.0\Oqtane.PowerBIViewer.Server.Oqtane.dll" target="lib\net7.0" /> 
-    <file src="..\Server\bin\Release\net7.0\Oqtane.PowerBIViewer.Server.Oqtane.pdb" target="lib\net7.0" /> 
-    <file src="..\Shared\bin\Release\net7.0\Oqtane.PowerBIViewer.Shared.Oqtane.dll" target="lib\net7.0" /> 
-    <file src="..\Shared\bin\Release\net7.0\Oqtane.PowerBIViewer.Shared.Oqtane.pdb" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Microsoft.Graph.Core.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Microsoft.Graph.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Microsoft.Identity.Client.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Microsoft.PowerBI.Api.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Newtonsoft.Json.Bson.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Newtonsoft.Json.dll" target="lib\net7.0" />
-	<file src="..\Server\bin\Release\net7.0\Microsoft.Rest.ClientRuntime.dll" target="lib\net7.0" />
-	<file src="..\Server\wwwroot\**\*.*" target="wwwroot" /> 
-    <file src="icon.png" target="" />
-  </files>
+	<metadata>
+		<id>Oqtane.PowerBIViewer</id>
+		<version>2.0.0</version>
+		<authors>Oqtane</authors>
+		<owners>Oqtane</owners>
+		<title>PowerBIViewer</title>
+		<description>PowerBIViewer</description>
+		<copyright>Oqtane</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/oqtane/oqtane.framework</projectUrl>
+		<icon>icon.png</icon>
+		<tags>oqtane module</tags>
+		<releaseNotes></releaseNotes>
+		<summary></summary>
+		<dependencies>
+			<group targetFramework="net8.0">
+				<dependency id="Oqtane.Framework" version="3.4.2" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\Client\bin\Release\net8.0\Oqtane.PowerBIViewer.Client.Oqtane.dll" target="lib\net8.0" />
+		<file src="..\Client\bin\Release\net8.0\Oqtane.PowerBIViewer.Client.Oqtane.pdb" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Oqtane.PowerBIViewer.Server.Oqtane.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Oqtane.PowerBIViewer.Server.Oqtane.pdb" target="lib\net8.0" />
+		<file src="..\Shared\bin\Release\net8.0\Oqtane.PowerBIViewer.Shared.Oqtane.dll" target="lib\net8.0" />
+		<file src="..\Shared\bin\Release\net8.0\Oqtane.PowerBIViewer.Shared.Oqtane.pdb" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Microsoft.Graph.Core.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Microsoft.Graph.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Microsoft.Identity.Client.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Microsoft.PowerBI.Api.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Newtonsoft.Json.Bson.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Newtonsoft.Json.dll" target="lib\net8.0" />
+		<file src="..\Server\bin\Release\net8.0\Microsoft.Rest.ClientRuntime.dll" target="lib\net8.0" />
+		<file src="..\Server\wwwroot\**\*.*" target="wwwroot" />
+		<file src="icon.png" target="" />
+	</files>
 </package>
