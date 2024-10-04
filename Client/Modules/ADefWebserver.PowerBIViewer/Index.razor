@@ -70,13 +70,17 @@ else
             {
                 if (_PowerBIViewer.AuthToken != "")
                 {
-                    var interop = new Oqtane.PowerBIViewer.Interop(JSRuntime);
 
-                    await interop.CreateReport(
-                            PowerBIElement,
-                            EmbedToken,
-                            EmbedUrl,
-                            ReportId);
+                    if (!firstRender)
+                    {
+                        var interop = new Oqtane.PowerBIViewer.Interop(JSRuntime);
+
+                        await interop.CreateReport(
+                                PowerBIElement,
+                                EmbedToken,
+                                EmbedUrl,
+                                ReportId);
+                    }
                 }
             }
         }
