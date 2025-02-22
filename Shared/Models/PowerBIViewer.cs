@@ -16,7 +16,10 @@ namespace Oqtane.PowerBIViewer.Models
         public string ReportId { get; set; }
         public string AuthToken { get; set; }
         public string EmbedUrl { get; set; }
+
+        [NotMapped]
         public EmbedToken EmbedToken { get; set; }
+
         public string CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public string ModifiedBy { get; set; }
